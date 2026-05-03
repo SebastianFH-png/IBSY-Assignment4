@@ -13,35 +13,24 @@ This repository contains the implementation and evaluation of sequence alignment
 
 Implemented methods:
 
-- Pairwise: Needleman-Wunsch, Smith-Waterman, Gotoh, Banded DP, Hirschberg
-- Heuristics: BLAST-style Seed-and-Extend, Minimizer-Greedy
-- MSA: Progressive Alignment, Iterative Refinement, Profile-HMM (Viterbi)
+- Needleman-Wunsch (Global Alignment)
+- Smith-Waterman (Local Alignment)
+- Gotoh (Global Alignment with Affine Gaps)
+- Basic Seed-and-Extend (Heuristic / BLAST-style)
 
 ## Structure
 
-- [Implementation](Implementation) - Python code and tests
-- [Datasets](Datasets) - input data
+- [Implementation](Implementation) - Python code
+- [Datasets](Datasets) - input data (fasta format)
 - [Instructions](Instructions) - assignment description
-- [Latex](Latex) - LaTeX sources and final PDF
+- [Latex](Latex) - LaTeX sources for the report
 
 ## Run
 
-Direct execution (script is executable):
+To run the experiments:
 
 ```bash
-./Implementation/main.py
-```
-
-Alternative with Python:
-
-```bash
-python Implementation/main.py
-```
-
-## Tests
-
-```bash
-python -m unittest discover -s Implementation/tests -v
+python Implementation/Main.py
 ```
 
 ## Rebuild PDF
