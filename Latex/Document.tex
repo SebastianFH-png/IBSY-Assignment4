@@ -1,0 +1,198 @@
+%
+% FH Technikum Wien
+% !TEX encoding = UTF-8 Unicode
+%
+\documentclass[Assignment,MME,english]{twbook}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{makecell}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{csquotes}
+\usepackage{hyperref}
+\usepackage[figure]{hypcap}
+\usepackage{textgreek}
+\usepackage{float}
+%
+% Hier biblatex & Biber konfigurieren; Vergessen Sie nicht, dass Sie biber verwenden müssen um eine Bibliothek zu erzeugen
+%
+\usepackage[backend=bibtex, style=ieee]{biblatex}
+\addbibresource{Literatur.bib}
+
+\makeatletter
+\providecommand\listacroname{}
+\@ifclasswith{twbook}{english}
+{%
+    \renewcommand\listacroname{List of Abbreviations}
+}{%
+    \renewcommand\listacroname{Abkürzungsverzeichnis}
+}
+\makeatother
+
+\usepackage{blindtext}
+
+\title{Assignment in Sequence Alignment}
+\author{Sebastian Schedl}
+\studentnumber{me25m019}
+\supervisor{Dr Prabath Jayathissa}
+\place{Wien}
+%\kurzfassung{\blindtext}
+\schlagworte{Sequence Alignment, Dynamic Programming, Bioinformatics}
+\outline{\blindtext}
+\keywords{Needleman-Wunsch, Smith-Waterman, Gotoh, Seed-and-Extend}
+
+\begin{document}
+\maketitle
+
+\chapter*{Abstract}
+This report shows the implementation of four sequence alignment methods in Python. The code is well-commented and easy to read. The algorithms are: Needleman-Wunsch (Global Alignment), Smith-Waterman (Local Alignment), Gotoh (Global with Affine Gaps), and a simple BLAST-style Seed-and-Extend heuristic. We test these methods with three datasets: short related proteins, distant homologs, and pieces of the \textit{E. coli} genome. We also measure the computational time and memory used by each algorithm, and we check how different parameters change the score. The results show that exact dynamic programming methods use $O(n^2)$ time and memory, but the heuristic method is much faster and uses very little memory.
+
+\chapter{Introduction and Background}
+Sequence alignment is very important in bioinformatics. Finding similarities between DNA, RNA, or proteins helps us understand biology better, like finding closely related genes or building family trees. We usually divide methods into global alignment (matching the whole sequence) and local alignment (finding small matching parts) \cite{needleman1970,smith1981}.
+
+In practice, we must choose between getting the best accuracy and saving computer time. Exact dynamic programming (DP) algorithms always find the best score based on the rules. But they take too much memory and time for very long sequences like whole genomes. Because of this, it is common to use faster heuristic methods \cite{altschul1990}.
+
+The goal of this assignment is to write simple Python code for four basic alignment methods. The code looks a bit like Java to make the structure clear. We will test how much time and memory they use, and discuss when to use which method.
+
+\chapter{Algorithms and Theory}
+
+\section{Exact Dynamic Programming Methods}
+\subsection{Needleman-Wunsch (Global)}
+The Needleman-Wunsch algorithm finds the best global alignment. It aligns two sequences from the start to the end \cite{needleman1970}. It builds a matrix using match, mismatch, and gap scores. After the matrix is filled, a traceback finds the best matched sequence.
+
+\subsection{Smith-Waterman (Local)}
+The Smith-Waterman algorithm is used for local alignment \cite{smith1981}. It is very similar to Needleman-Wunsch, but the matrix scores cannot go below zero. If a score becomes negative, it is set to zero. The traceback starts at the highest number in the whole matrix and stops when it reaches a zero. This isolates the best matching part between two sequences.
+
+\subsection{Gotoh (Affine Gap Penalties)}
+Normal algorithms give the same penalty for one 10-character gap as for ten separate 1-character gaps. In biology, one big gap is more common than many small gaps. Gotoh fixes this by using different penalties for opening a gap and extending a gap \cite{gotoh1982}. Our code does this by using three separate matrices (one for match, one for gap in sequence 1, and one for gap in sequence 2).
+
+\section{Heuristic/Approximate Methods}
+\subsection{BLAST-style Seed-and-Extend}
+Exact DP algorithms are too slow ($O(n^2)$). To make it run much faster, we can use a heuristic method like BLAST \cite{altschul1990}. It splits the sequence into small exact words called $k$-mers (seeds). When it finds the same seed in both sequences, it tries to make the match longer to the left and right without adding any gaps.
+
+\chapter{Implementation Details}
+The code is written in a simple object-oriented way. We use classes and dynamic file paths so it runs on any computer without problems.
+The files in the \texttt{Implementation/} folder are:
+\begin{itemize}
+    \item \texttt{Config.py}: Stores static parameters like scores and gap penalties.
+    \item \texttt{SequenceReader.py}: Reads \texttt{.fasta} dataset files.
+    \item \texttt{NeedlemanWunsch.py}: Global Alignment DP algorithm.
+    \item \texttt{SmithWaterman.py}: Local Alignment DP algorithm.
+    \item \texttt{Gotoh.py}: Gotoh algorithm with 3 matrices.
+    \item \texttt{BasicSeedAndExtend.py}: Heuristic seed matcher.
+    \item \texttt{ExperimentRunner.py}: Runs the experiments to measure time and memory.
+    \item \texttt{Main.py}: The script to start the program.
+\end{itemize}
+
+\chapter{Experimental Design}
+We measure the running time in milliseconds and the peak memory in KB. We use the Python \texttt{time} and \texttt{tracemalloc} libraries for this.
+
+\section{Standard Configurations}
+Our standard scoring rules are:
+\begin{itemize}
+    \item Match score: $+2$
+    \item Mismatch score: $-1$
+    \item Gap penalty: $-2$
+\end{itemize}
+For Gotoh's affine gaps, the Gap Open penalty is $-3$, and Gap Extension is $-1$.
+
+\section{Datasets}
+1. \textbf{Short Related Proteins:} Tests algorithms on normal, similar sequences. \\
+2. \textbf{Distant Homologs:} Tests local alignment on sequences that are not very similar and have many mutations.\\
+3. \textbf{E. coli Genomic Slices}: We take 200bp pieces from a long genome to see how fast the algorithms are.
+
+\chapter{Results}
+
+\section{Performance Benchmarks}
+
+% Table Short Proteins
+\begin{table}[H]
+\centering
+\caption{Dataset 1: Short related proteins.fasta ($\sim$150bp segments)}
+\begin{tabular}{lrrr}
+\hline
+Algorithm & Score & Runtime (ms) & Peak Memory (KB) \\
+\hline
+Needleman--Wunsch (Global) & 28 & 22.37 & 739.06 \\
+Smith--Waterman (Local) & 34 & 3.13 & 170.26 \\
+Gotoh (Affine Gap) & 27 & 58.68 & 2195.45 \\
+Basic Seed-and-Extend (Heuristic) & 5 & 0.19 & 17.13 \\
+\hline
+\end{tabular}
+\end{table}
+
+% Table Distant
+\begin{table}[H]
+\centering
+\caption{Dataset 2: Distant homologs.fasta ($\sim$200bp segments)}
+\begin{tabular}{lrrr}
+\hline
+Algorithm & Score & Runtime (ms) & Peak Memory (KB) \\
+\hline
+Needleman--Wunsch (Global) & -107 & 44.09 & 1630.50 \\
+Smith--Waterman (Local) & 9 & 6.06 & 372.99 \\
+Gotoh (Affine Gap) & -105 & 135.50 & 4752.83 \\
+Basic Seed-and-Extend (Heuristic) & 4 & 0.28 & 27.75 \\
+\hline
+\end{tabular}
+\end{table}
+
+% Table Ecoli
+\begin{table}[H]
+\centering
+\caption{Dataset 3: E. coli K-12 Genome Slices (200bp exact)}
+\begin{tabular}{lrrr}
+\hline
+Algorithm & Score & Runtime (ms) & Peak Memory (KB) \\
+\hline
+Needleman--Wunsch (Global) & 67 & 36.18 & 1241.73 \\
+Smith--Waterman (Local) & 82 & 6.30 & 373.51 \\
+Gotoh (Affine Gap) & 59 & 92.76 & 3311.83 \\
+Basic Seed-and-Extend (Heuristic) & 7 & 0.49 & 16.21 \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Parameter Sensitivity}
+We tested Needleman-Wunsch with three different scoring rules on the short proteins dataset. The standard score was 28.
+\begin{itemize}
+    \item \textbf{Set 1 (Match: 2, Mis: -1, Gap: -5):} Strong gap penalty. The score drops to $-31$. The algorithm cannot use gaps easily, so the alignment is bad.
+    \item \textbf{Set 2 (Match: 2, Mis: -1, Gap: 0):} Free gaps. The score goes very high to $98$. The algorithm just uses too many gaps to match single letters.
+    \item \textbf{Set 3 (Match: 1, Mis: -5, Gap: -1):} Strong mismatch penalty. The score goes down to $-53$. The algorithm prefers to use gaps instead of taking a mismatch.
+\end{itemize}
+
+
+\chapter{Discussion and Conclusions}
+The test results show what we expect from the theory. Needleman-Wunsch is an okay global method, but it gets very low scores on distant homologs. This happens because mutations give negative points over the whole sequence. Smith-Waterman is much better here. It gets positive scores because it only aligns the good parts and ignores the bad parts.
+
+The memory and time results show the problems of DP algorithms. Needleman-Wunsch needs about 1 MB of memory just for 200bp sequences. Gotoh needs exactly three times more memory (3.31 MB) because it uses three matrices ($M, X, Y$). On the other hand, the Seed-and-Extend heuristic is extremely fast (less than 1 millisecond) and uses less than 20 KB of memory. This is exactly why heuristic methods like BLAST are used for big databases today.
+
+The parameter tests show that scores are very important to get a biological meaning. If we change the gap penalties, the algorithm gives a completely different output. We must choose the parameters very carefully depending on the biology problem.
+
+\clearpage
+\printbibliography
+\clearpage
+
+\listoftables
+\clearpage
+
+%
+% Hier beginnt der Anhang.
+%
+\appendix
+\chapter{Code Excerpts}
+Implementation files overview:
+\begin{itemize}
+    \item \texttt{NeedlemanWunsch.py}: Global exact DP matrix structure.
+    \item \texttt{SmithWaterman.py}: Local exact DP with non-negative resets.
+    \item \texttt{Gotoh.py}: Mathematical framework for affine gap matrices.
+    \item \texttt{BasicSeedAndExtend.py}: $k$-mer lookup dictionary and linear extensions.
+    \item \texttt{ExperimentRunner.py}: Tracemalloc logging and benchmarking wrappers.
+\end{itemize}
+
+Repository URL: \href{https://github.com/SebastianFH-png/IBSY-Assignment4.git}{https://github.com/SebastianFH-png/IBSY-Assignment4.git}
+
+\end{document}

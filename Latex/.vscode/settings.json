@@ -1,0 +1,22 @@
+{
+    "cSpell.language": "en,de-DE",
+    "cSpell.dictionaries": ["de-de", "de-DE", "german"],
+    "cSpell.enableFiletypes": ["latex", "markdown", "tex"],
+    "cSpell.enabledLanguageIds": [
+        "latex",
+        "markdown",
+        "tex"
+    ],
+    "python.analysis.extraPaths": [
+        "./Implementation/Pairwise Alignment",
+        "./Implementation/Heuristic and Approximate Alignment",
+        "./Implementation/Multiple Sequence Alignment"
+    ],
+    "python-envs.pythonProjects": [
+        {
+            "path": "Implementation",
+            "envManager": "ms-python.python:venv",
+            "packageManager": "ms-python.python:pip"
+        }
+    ]
+}

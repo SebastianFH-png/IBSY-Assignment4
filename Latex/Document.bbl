@@ -1,0 +1,152 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{none/global//global/global}
+  \entry{needleman1970}{article}{}
+    \name{author}{2}{}{%
+      {{hash=NSB}{%
+         family={Needleman},
+         familyi={N\bibinitperiod},
+         given={Saul\bibnamedelima B.},
+         giveni={S\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=WCD}{%
+         family={Wunsch},
+         familyi={W\bibinitperiod},
+         given={Christian\bibnamedelima D.},
+         giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{NSBWCD1}
+    \strng{fullhash}{NSBWCD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1016/0022-2836(70)90057-4
+    \endverb
+    \field{number}{3}
+    \field{pages}{443\bibrangedash 453}
+    \field{title}{A general method applicable to the search for similarities in the amino acid sequence of two proteins}
+    \field{volume}{48}
+    \field{journaltitle}{Journal of Molecular Biology}
+    \field{year}{1970}
+  \endentry
+
+  \entry{smith1981}{article}{}
+    \name{author}{2}{}{%
+      {{hash=STF}{%
+         family={Smith},
+         familyi={S\bibinitperiod},
+         given={Temple\bibnamedelima F.},
+         giveni={T\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=WMS}{%
+         family={Waterman},
+         familyi={W\bibinitperiod},
+         given={Michael\bibnamedelima S.},
+         giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{STFWMS1}
+    \strng{fullhash}{STFWMS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1016/0022-2836(81)90087-5
+    \endverb
+    \field{number}{1}
+    \field{pages}{195\bibrangedash 197}
+    \field{title}{Identification of common molecular subsequences}
+    \field{volume}{147}
+    \field{journaltitle}{Journal of Molecular Biology}
+    \field{year}{1981}
+  \endentry
+
+  \entry{altschul1990}{article}{}
+    \name{author}{5}{}{%
+      {{hash=ASF}{%
+         family={Altschul},
+         familyi={A\bibinitperiod},
+         given={Stephen\bibnamedelima F.},
+         giveni={S\bibinitperiod\bibinitdelim F\bibinitperiod},
+      }}%
+      {{hash=GW}{%
+         family={Gish},
+         familyi={G\bibinitperiod},
+         given={Warren},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=MW}{%
+         family={Miller},
+         familyi={M\bibinitperiod},
+         given={Webb},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=MEW}{%
+         family={Myers},
+         familyi={M\bibinitperiod},
+         given={Eugene\bibnamedelima W.},
+         giveni={E\bibinitperiod\bibinitdelim W\bibinitperiod},
+      }}%
+      {{hash=LDJ}{%
+         family={Lipman},
+         familyi={L\bibinitperiod},
+         given={David\bibnamedelima J.},
+         giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ASFGWMW+1}
+    \strng{fullhash}{ASFGWMWMEWLDJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1016/S0022-2836(05)80360-2
+    \endverb
+    \field{number}{3}
+    \field{pages}{403\bibrangedash 410}
+    \field{title}{Basic local alignment search tool}
+    \field{volume}{215}
+    \field{journaltitle}{Journal of Molecular Biology}
+    \field{year}{1990}
+  \endentry
+
+  \entry{gotoh1982}{article}{}
+    \name{author}{1}{}{%
+      {{hash=GO}{%
+         family={Gotoh},
+         familyi={G\bibinitperiod},
+         given={Osamu},
+         giveni={O\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GO1}
+    \strng{fullhash}{GO1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1016/0022-2836(82)90398-9
+    \endverb
+    \field{number}{3}
+    \field{pages}{705\bibrangedash 708}
+    \field{title}{An improved algorithm for matching biological sequences}
+    \field{volume}{162}
+    \field{journaltitle}{Journal of Molecular Biology}
+    \field{year}{1982}
+  \endentry
+\enddatalist
+\endinput
