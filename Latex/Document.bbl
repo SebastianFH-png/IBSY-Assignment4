@@ -1,10 +1,10 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.2 $
+% $ biblatex bbl format version 3.3 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
-% This file may safely be deleted. It will be recreated as
-% required.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
 %
 \begingroup
 \makeatletter
@@ -16,137 +16,164 @@
   {}
 \endgroup
 
-\datalist[entry]{none/global//global/global}
-  \entry{needleman1970}{article}{}
-    \name{author}{2}{}{%
-      {{hash=NSB}{%
-         family={Needleman},
-         familyi={N\bibinitperiod},
-         given={Saul\bibnamedelima B.},
-         giveni={S\bibinitperiod\bibinitdelim B\bibinitperiod},
-      }}%
-      {{hash=WCD}{%
-         family={Wunsch},
-         familyi={W\bibinitperiod},
-         given={Christian\bibnamedelima D.},
-         giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{NSBWCD1}
-    \strng{fullhash}{NSBWCD1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \verb{doi}
-    \verb 10.1016/0022-2836(70)90057-4
-    \endverb
-    \field{number}{3}
-    \field{pages}{443\bibrangedash 453}
-    \field{title}{A general method applicable to the search for similarities in the amino acid sequence of two proteins}
-    \field{volume}{48}
-    \field{journaltitle}{Journal of Molecular Biology}
-    \field{year}{1970}
-  \endentry
 
-  \entry{smith1981}{article}{}
-    \name{author}{2}{}{%
-      {{hash=STF}{%
-         family={Smith},
-         familyi={S\bibinitperiod},
-         given={Temple\bibnamedelima F.},
-         giveni={T\bibinitperiod\bibinitdelim F\bibinitperiod},
-      }}%
-      {{hash=WMS}{%
-         family={Waterman},
-         familyi={W\bibinitperiod},
-         given={Michael\bibnamedelima S.},
-         giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{STFWMS1}
-    \strng{fullhash}{STFWMS1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \verb{doi}
-    \verb 10.1016/0022-2836(81)90087-5
-    \endverb
-    \field{number}{1}
-    \field{pages}{195\bibrangedash 197}
-    \field{title}{Identification of common molecular subsequences}
-    \field{volume}{147}
-    \field{journaltitle}{Journal of Molecular Biology}
-    \field{year}{1981}
-  \endentry
-
-  \entry{altschul1990}{article}{}
-    \name{author}{5}{}{%
-      {{hash=ASF}{%
-         family={Altschul},
-         familyi={A\bibinitperiod},
-         given={Stephen\bibnamedelima F.},
-         giveni={S\bibinitperiod\bibinitdelim F\bibinitperiod},
-      }}%
-      {{hash=GW}{%
-         family={Gish},
-         familyi={G\bibinitperiod},
-         given={Warren},
-         giveni={W\bibinitperiod},
-      }}%
-      {{hash=MW}{%
-         family={Miller},
-         familyi={M\bibinitperiod},
-         given={Webb},
-         giveni={W\bibinitperiod},
-      }}%
-      {{hash=MEW}{%
-         family={Myers},
-         familyi={M\bibinitperiod},
-         given={Eugene\bibnamedelima W.},
-         giveni={E\bibinitperiod\bibinitdelim W\bibinitperiod},
-      }}%
-      {{hash=LDJ}{%
-         family={Lipman},
-         familyi={L\bibinitperiod},
-         given={David\bibnamedelima J.},
-         giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{ASFGWMW+1}
-    \strng{fullhash}{ASFGWMWMEWLDJ1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \verb{doi}
-    \verb 10.1016/S0022-2836(05)80360-2
-    \endverb
-    \field{number}{3}
-    \field{pages}{403\bibrangedash 410}
-    \field{title}{Basic local alignment search tool}
-    \field{volume}{215}
-    \field{journaltitle}{Journal of Molecular Biology}
-    \field{year}{1990}
-  \endentry
-
-  \entry{gotoh1982}{article}{}
-    \name{author}{1}{}{%
-      {{hash=GO}{%
-         family={Gotoh},
-         familyi={G\bibinitperiod},
-         given={Osamu},
-         giveni={O\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{GO1}
-    \strng{fullhash}{GO1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \verb{doi}
-    \verb 10.1016/0022-2836(82)90398-9
-    \endverb
-    \field{number}{3}
-    \field{pages}{705\bibrangedash 708}
-    \field{title}{An improved algorithm for matching biological sequences}
-    \field{volume}{162}
-    \field{journaltitle}{Journal of Molecular Biology}
-    \field{year}{1982}
-  \endentry
-\enddatalist
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{needleman1970}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=51aa8aae5dbbb5be7b45030d1d1f4c55}{%
+           family={Needleman},
+           familyi={N\bibinitperiod},
+           given={Saul\bibnamedelima B.},
+           giveni={S\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=17a8ad5574620bef562ad96adac8d254}{%
+           family={Wunsch},
+           familyi={W\bibinitperiod},
+           given={Christian\bibnamedelima D.},
+           giveni={C\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{b4f528fa64d350ccf1a3ce4cf7527e42}
+      \strng{fullhash}{b4f528fa64d350ccf1a3ce4cf7527e42}
+      \strng{fullhashraw}{b4f528fa64d350ccf1a3ce4cf7527e42}
+      \strng{bibnamehash}{b4f528fa64d350ccf1a3ce4cf7527e42}
+      \strng{authorbibnamehash}{b4f528fa64d350ccf1a3ce4cf7527e42}
+      \strng{authornamehash}{b4f528fa64d350ccf1a3ce4cf7527e42}
+      \strng{authorfullhash}{b4f528fa64d350ccf1a3ce4cf7527e42}
+      \strng{authorfullhashraw}{b4f528fa64d350ccf1a3ce4cf7527e42}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Molecular Biology}
+      \field{number}{3}
+      \field{title}{A general method applicable to the search for similarities in the amino acid sequence of two proteins}
+      \field{volume}{48}
+      \field{year}{1970}
+      \field{pages}{443\bibrangedash 453}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1016/0022-2836(70)90057-4
+      \endverb
+    \endentry
+    \entry{smith1981}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=c1e55df57f6dfc3d7d670baa552b4e0a}{%
+           family={Smith},
+           familyi={S\bibinitperiod},
+           given={Temple\bibnamedelima F.},
+           giveni={T\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=75962bba95c5349d125f124ce197a2b4}{%
+           family={Waterman},
+           familyi={W\bibinitperiod},
+           given={Michael\bibnamedelima S.},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \strng{namehash}{fa84a48764a57aeb995b1af15d9a8d0b}
+      \strng{fullhash}{fa84a48764a57aeb995b1af15d9a8d0b}
+      \strng{fullhashraw}{fa84a48764a57aeb995b1af15d9a8d0b}
+      \strng{bibnamehash}{fa84a48764a57aeb995b1af15d9a8d0b}
+      \strng{authorbibnamehash}{fa84a48764a57aeb995b1af15d9a8d0b}
+      \strng{authornamehash}{fa84a48764a57aeb995b1af15d9a8d0b}
+      \strng{authorfullhash}{fa84a48764a57aeb995b1af15d9a8d0b}
+      \strng{authorfullhashraw}{fa84a48764a57aeb995b1af15d9a8d0b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Molecular Biology}
+      \field{number}{1}
+      \field{title}{Identification of common molecular subsequences}
+      \field{volume}{147}
+      \field{year}{1981}
+      \field{pages}{195\bibrangedash 197}
+      \range{pages}{3}
+      \verb{doi}
+      \verb 10.1016/0022-2836(81)90087-5
+      \endverb
+    \endentry
+    \entry{altschul1990}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=b927ed90e6cf748b2b81e18cb1886f8c}{%
+           family={Altschul},
+           familyi={A\bibinitperiod},
+           given={Stephen\bibnamedelima F.},
+           giveni={S\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=1c2560e77e0430d3a44f0f96961c9539}{%
+           family={Gish},
+           familyi={G\bibinitperiod},
+           given={Warren},
+           giveni={W\bibinitperiod}}}%
+        {{hash=c13772644daf4bc5872dadebc400007c}{%
+           family={Miller},
+           familyi={M\bibinitperiod},
+           given={Webb},
+           giveni={W\bibinitperiod}}}%
+        {{hash=0df3272f32e5082671c327a5b8a0f352}{%
+           family={Myers},
+           familyi={M\bibinitperiod},
+           given={Eugene\bibnamedelima W.},
+           giveni={E\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=cbc45a55c63335eebae2bcd2c7739c80}{%
+           family={Lipman},
+           familyi={L\bibinitperiod},
+           given={David\bibnamedelima J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{b1134051f6fe46990425db35979c2705}
+      \strng{fullhash}{44d562514527c37cb1da4ff38faa11ab}
+      \strng{fullhashraw}{44d562514527c37cb1da4ff38faa11ab}
+      \strng{bibnamehash}{44d562514527c37cb1da4ff38faa11ab}
+      \strng{authorbibnamehash}{44d562514527c37cb1da4ff38faa11ab}
+      \strng{authornamehash}{b1134051f6fe46990425db35979c2705}
+      \strng{authorfullhash}{44d562514527c37cb1da4ff38faa11ab}
+      \strng{authorfullhashraw}{44d562514527c37cb1da4ff38faa11ab}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Molecular Biology}
+      \field{number}{3}
+      \field{title}{Basic local alignment search tool}
+      \field{volume}{215}
+      \field{year}{1990}
+      \field{pages}{403\bibrangedash 410}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1016/S0022-2836(05)80360-2
+      \endverb
+    \endentry
+    \entry{gotoh1982}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=9c5964d14736548b16d8a8dba1bde7df}{%
+           family={Gotoh},
+           familyi={G\bibinitperiod},
+           given={Osamu},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c5964d14736548b16d8a8dba1bde7df}
+      \strng{fullhash}{9c5964d14736548b16d8a8dba1bde7df}
+      \strng{fullhashraw}{9c5964d14736548b16d8a8dba1bde7df}
+      \strng{bibnamehash}{9c5964d14736548b16d8a8dba1bde7df}
+      \strng{authorbibnamehash}{9c5964d14736548b16d8a8dba1bde7df}
+      \strng{authornamehash}{9c5964d14736548b16d8a8dba1bde7df}
+      \strng{authorfullhash}{9c5964d14736548b16d8a8dba1bde7df}
+      \strng{authorfullhashraw}{9c5964d14736548b16d8a8dba1bde7df}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Molecular Biology}
+      \field{number}{3}
+      \field{title}{An improved algorithm for matching biological sequences}
+      \field{volume}{162}
+      \field{year}{1982}
+      \field{pages}{705\bibrangedash 708}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1016/0022-2836(82)90398-9
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
+

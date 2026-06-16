@@ -2,4 +2,5 @@
 \contentsline {table}{\numberline {\small 1\normalsize }{\ignorespaces Dataset 1: Short related proteins.fasta ($\sim $150bp segments)}}{4}{table.5.1}%
 \contentsline {table}{\numberline {\small 2\normalsize }{\ignorespaces Dataset 2: Distant homologs.fasta ($\sim $200bp segments)}}{4}{table.5.2}%
 \contentsline {table}{\numberline {\small 3\normalsize }{\ignorespaces Dataset 3: E. coli K-12 Genome Slices (200bp exact)}}{5}{table.5.3}%
+\def \@chapapp {\appendixname }
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

@@ -5,6 +5,7 @@
 \documentclass[Assignment,MME,english]{twbook}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\renewcommand{\ttdefault}{lmtt}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
 \usepackage{makecell}
@@ -19,7 +20,7 @@
 %
 % Hier biblatex & Biber konfigurieren; Vergessen Sie nicht, dass Sie biber verwenden müssen um eine Bibliothek zu erzeugen
 %
-\usepackage[backend=bibtex, style=ieee]{biblatex}
+\usepackage[backend=biber, style=ieee]{biblatex}
 \addbibresource{Literatur.bib}
 
 \makeatletter
@@ -55,7 +56,7 @@ Sequence alignment is very important in bioinformatics. Finding similarities bet
 
 In practice, we must choose between getting the best accuracy and saving computer time. Exact dynamic programming (DP) algorithms always find the best score based on the rules. But they take too much memory and time for very long sequences like whole genomes. Because of this, it is common to use faster heuristic methods \cite{altschul1990}.
 
-The goal of this assignment is to write simple Python code for four basic alignment methods. The code looks a bit like Java to make the structure clear. We will test how much time and memory they use, and discuss when to use which method.
+The goal of this assignment is to write simple Python code for four basic alignment methods. We will test how much time and memory they use, and discuss when to use which method.
 
 \chapter{Algorithms and Theory}
 
